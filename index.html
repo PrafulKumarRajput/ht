@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>Animation</title>
+    <style>
+        /* body{
+            font-family: 'Lato', sans-serif;
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+            width: 100vw;
+            font-size: 20px;
+           
+        }
+        h1{
+            position: relative;
+            color: red;
+        }
+        h1::before{
+            content: "";
+            width:5vw;
+            position: absolute;
+            transform: translateX(-50%);
+            top: -6%;
+            left: 50%;
+            border-bottom: 5px solid grey;
+        }
+        h1::after{
+            content:"";
+            width: 5vw;
+             position: absolute;
+             bottom: -10%;
+             left: 50%;
+             transform: translateX(-50%);
+             border-bottom: 5px solid grey;
+        }
+        @media(max-width: 768px){
+
+        } */
+        .root{
+           --widh:200px;
+           --heig:200px;
+        }
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+
+            justify-content: center;
+             align-items: center;
+             text-align: center;
+        }
+        .container{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: relative;
+           transform: rotate(45deg);
+           animation: rotate  5s   ;
+            
+        }
+       
+        @keyframes rotate {
+            0%{
+                transform: rotate(0deg);
+                background: blue;
+
+            }100%{
+
+                transform: rotate(765deg);
+                background: red;
+                animation: heart 2s infinite;
+            }
+            
+        }
+        .container::before{
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: 0;
+            height: 200px;
+            width: 200px;
+             
+            background: rgb(255, 0, 0);
+            border-radius: 50%;
+            animation: margin 5s ;
+            
+        }
+        @keyframes margin {
+            0%{
+                margin-left: -400%;
+                background: green;
+            }100%{
+                margin-left: 0px;
+                background: red;
+                animation: heart 2s infinite;
+            }
+            
+        }
+        .container::after{
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            left: -50%;
+            height: 200px;
+            width: 200px;
+             
+            background: rgb(255, 0, 0);
+            border-radius: 50%;
+            animation: marg 5s ;
+           
+        }
+        @keyframes marg {
+            0%{
+                margin-left: 400%;
+                background: green;
+            }100%{
+                margin-left: 0px;
+                background: red;
+                animation: heart 2s infinite;
+            }
+            
+        }
+        @keyframes heart {
+            0%{
+                width: 220px;
+                height: 220px;
+                background: rgb(214, 91, 20);
+                 
+            }
+            
+        }
+    </style>
+</head>
+<body>
+      <div class="container">
+          <!-- <h1>Coder</h1> -->
+      </div>
+</body>
+</html>
